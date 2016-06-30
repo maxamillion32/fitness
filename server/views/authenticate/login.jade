@@ -26,15 +26,15 @@ html
                     .well
                         h1.text-center Fitness
                         hr
-                        form.form-horizontal
+                        form.form-horizontal(action='/login', method="post")
                             .input-group
                                 span.input-group-addon
                                     i.glyphicon.glyphicon-user
-                                input.form-control(placeholder="User Name")
+                                input.form-control(placeholder="User Name", name="username", id="username")
                             .input-group
                                 span.input-group-addon
                                     i.glyphicon.glyphicon-lock
-                                input.form-control(type="password", placeholder="password")
+                                input.form-control(type="password", placeholder="password", name="password", id="password")
                             .button-group
                                 input.btn.btn-success.login(type="submit", value="Login")
                                 a(href="/signup") Create New Account

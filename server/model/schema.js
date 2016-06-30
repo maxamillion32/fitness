@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var notifier = require('node-notifier');
+var password_hash = require('password-hash');
 
 
 var sizeSchema = mongoose.Schema({
@@ -68,7 +69,7 @@ var records_json = function(req) {
     user.fullname = req.param('fullname');
     user.fathername = req.param('fathername');
     user.username = req.param('username');
-    user.password = req.param('password');
+    user.password = password_hash.generate(req.param('password'));
     user.email = req.param('email');
     user.age = req.param('age');
     user.other = req.param('other');

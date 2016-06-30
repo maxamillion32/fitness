@@ -44,6 +44,7 @@ module.exports = function(app,config) {
     /*** Athenticate **/
 
     app.get('/login', auth.login);
+    app.post('/login', auth.signin);
     app.get('/signup', auth.signup);
     app.post('/signup', auth.signuppost);
 
